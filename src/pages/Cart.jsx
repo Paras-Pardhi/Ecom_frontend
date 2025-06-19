@@ -32,7 +32,7 @@ const Cart = () => {
         }));
 
         try {
-            const res = await fetch('http://localhost:8080/api/create-checkout-session', {
+            const res = await fetch('https://ecom-backend-n7bo.onrender.com/api/create-checkout-session', {
                 method: 'POST',
                 credentials: "include",
                 headers: { 'Content-Type': 'application/json' },
