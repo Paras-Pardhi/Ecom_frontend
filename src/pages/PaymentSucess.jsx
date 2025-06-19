@@ -9,32 +9,32 @@ const PaymentSuccess = () => {
   const navigate = useNavigate();
   const { fetchUserAddToCart } = useContext(Context);
 
-  useEffect(() => {
-    const clearCartAfterPayment = async () => {
-      try {
-        const response = await fetch(SummaryApi.clearCartAfterPayment.url, {
-          method: SummaryApi.clearCartAfterPayment.method,
-          credentials: "include",
-          headers: {
-            "Content-Type": "application/json",
-          },
-        });
+  // useEffect(() => {
+  //   const clearCartAfterPayment = async () => {
+  //     try {
+  //       const response = await fetch(SummaryApi.clearCartAfterPayment.url, {
+  //         method: SummaryApi.clearCartAfterPayment.method,
+  //         credentials: "include",
+  //         headers: {
+  //           "Content-Type": "application/json",
+  //         },
+  //       });
 
-        const result = await response.json();
+  //       const result = await response.json();
 
-        if (result.success) {
-          toast.success("Payment successful! Your cart is now empty.");
-          fetchUserAddToCart(); // update cart count in context
-        } else {
-          toast.error("Something went wrong while clearing the cart.");
-        }
-      } catch (error) {
-        toast.error("Error clearing cart.");
-      }
-    };
+  //       if (result.success) {
+  //         toast.success("Payment successful! Your cart is now empty.");
+  //         fetchUserAddToCart(); // update cart count in context
+  //       } else {
+  //         toast.error("Something went wrong while clearing the cart.");
+  //       }
+  //     } catch (error) {
+  //       toast.error("Error clearing cart.");
+  //     }
+  //   };
 
-    clearCartAfterPayment();
-  }, []);
+  //   clearCartAfterPayment();
+  // }, []);
 
   return (
     <div className="text-center mt-10">
