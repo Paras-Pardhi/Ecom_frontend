@@ -18,6 +18,42 @@
   }
 }
 
+.error-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #fbfbfb;
+}
+
+.error-img{
+  max-width:400px ;
+}
+
+.error-img img{
+  width: 100%;
+}
+
+
+.refresh-btn {
+  padding: 12px;
+  text-align: center;
+  border: none;
+  margin-top: 25px;
+  font-weight: 700;
+  color: #fff;
+  background: #2d5649;
+  font-size: 1.2rem;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.refresh-btn{
+  background: #dc2626;
+}
+
+
 /* Custom component styles */
 @layer components {
   .customShadow {

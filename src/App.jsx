@@ -5,11 +5,13 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { useEffect, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import SummaryApi from './common';
 import Context from './context';
 import { useDispatch } from 'react-redux';
 import { setUserDetails } from './store/userSlice';
+import Loading from './Loader/Loading';
+import Errorboundry from './ErrorBoundries/Errorboundry';
 
 function App() {
   const dispatch = useDispatch()
@@ -60,7 +62,11 @@ function App() {
         
         <Header/>
         <main className='min-h-[calc(100vh-120px)] pt-16'>
-          <Outlet/>
+          <Errorboundry>
+            <Suspense fallback={<Loading />}>
+              <Outlet />
+            </Suspense>
+          </Errorboundry>
         </main>
         <Footer/>
       </Context.Provider>

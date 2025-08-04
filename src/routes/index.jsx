@@ -4,14 +4,17 @@ import Home from '../pages/Home'
 import Login from '../pages/Login'
 import ForgotPassowrd from '../pages/ForgotPassowrd'
 import SignUp from '../pages/SignUp'
-import AdminPanel from '../pages/AdminPanel'
-import AllUsers from '../pages/AllUsers'
-import AllProducts from '../pages/AllProducts'
-import CategoryProduct from '../pages/CategoryProduct'
-import ProductDetails from '../pages/ProductDetails'
-import Cart from '../pages/Cart'
-import SearchProduct from '../pages/SearchProduct'
-import PaymentSuccess from '../pages/PaymentSucess'
+import { lazy } from 'react'
+
+const AdminPanel = lazy(() => import('../pages/AdminPanel'))
+const AllUsers = lazy(() => import('../pages/AllUsers'))
+const AllProducts = lazy(() => import('../pages/AllProducts'))
+const CategoryProduct = lazy(() => import('../pages/CategoryProduct'))
+const ProductDetails = lazy(() => import('../pages/ProductDetails'))
+const Cart = lazy(() => import('../pages/Cart'))
+const SearchProduct = lazy(() => import('../pages/SearchProduct'))
+const PaymentSuccess = lazy(() => import('../pages/PaymentSucess'))
+
 
 const router = createBrowserRouter([
     {
